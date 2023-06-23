@@ -1,0 +1,1 @@
+OPTIONS="-t {BOTTOKEN} -w {WEBHOOK} -a {AUTHTOKEN} -l 127.0.0.1 -p 8001"

@@ -1,0 +1,18 @@
+[Unit]
+Description = discord/http gateway daemon
+
+[Service]
+Type           = simple
+User           = root
+Group          = root
+LimitNOFILE    = 4096
+Restart        = always
+RestartSec     = 5s
+StandardOutput = syslog
+StandardError  = syslog
+SyslogIdentifier = simpcord
+EnvironmentFile=-/etc/sysconfig/simpcord
+ExecStart      = /usr/local/simpcord/simpcord $OPTIONS
+
+[Install]
+WantedBy = multi-user.target
