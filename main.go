@@ -98,6 +98,7 @@ func main() {
 	// Wait here until CTRL-C or other term signal is received.
 	log.Println("Discord bot is now running.  Press CTRL-C to exit.")
 	sc := make(chan os.Signal, 1)
+	defer close(sc)
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
 	<-sc
 
